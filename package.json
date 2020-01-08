@@ -1,13 +1,13 @@
 {
   "name": "eslint-plugin-webpack-magic-comments",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Checks the names of webpack chunk imports and corrects them to all-lowercase",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin"
   ],
-  "author": "cw-rb3198",
+  "author": "Ronit Bhatia",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
