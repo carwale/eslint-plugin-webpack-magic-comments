@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-webpack-magic-comments",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Checks the names of webpack chunk imports and corrects them to all-lowercase",
   "keywords": [
     "eslint",
@@ -13,6 +13,7 @@
     "test": "mocha tests --recursive"
   },
   "dependencies": {
+    "babel-eslint": "^10.0.3",
     "requireindex": "~1.1.0"
   },
   "devDependencies": {

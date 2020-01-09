@@ -10,7 +10,7 @@
 
 var rule = require("../../../lib/rules/check-chunk-name"),
 
-RuleTester = require("eslint").RuleTester;
+    RuleTester = require("eslint").RuleTester;
 
 
 //------------------------------------------------------------------------------
@@ -23,10 +23,13 @@ RuleTester = require("eslint").RuleTester;
 //     }
 // }];
 var parserOptions = {
+    "ecmaVersion": 6,
+    "sourceType": "module",
     ecmaFeatures: {
         es6: true,
     },
 }
+var options = []
 var ruleTester = new RuleTester();
 ruleTester.run("check-chunk-name", rule, {
 
@@ -34,7 +37,8 @@ ruleTester.run("check-chunk-name", rule, {
         {
             code: 'import(/*webpackChunkName : "lodash" */ "lodash")',
             options,
-            parserOptions
+            parserOptions,
+            parser: "babel-eslint"
         }
     ],
 
@@ -43,8 +47,9 @@ ruleTester.run("check-chunk-name", rule, {
             code: 'import(/*webpackChunkName : "Lodash" */ "lodash")',
             options,
             parserOptions,
+            parser: "babel-eslint",
             errors: [
-                'Webpack chunk name must consist only of lowercase letters'
+                'Webpack chunk name must consist only of lowercase letters.'
             ]
         }
     ]
